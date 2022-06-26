@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./News.css"
+import "./News.css";
 import { Card } from "react-bootstrap";
 
 class News extends Component {
@@ -32,13 +32,21 @@ class News extends Component {
       <div className="cards">
         {this.state.newsData.map((article) => (
           <Card className="card" style={{ width: "18rem" }} key={article.url}>
-            <Card.Img style={{ width: "inherit" }} variant="top" src={article.urlToImage ? article.urlToImage : "/logo192.png"} />
+            <Card.Img
+              style={{ width: "inherit" }}
+              variant="top"
+              src={article.urlToImage ? article.urlToImage : "/logo192.png"}
+            />
             <Card.Body>
               <Card.Title className="title">{article.title}</Card.Title>
               <Card.Text className="author">{article.author}</Card.Text>
-              <Card.Subtitle className="desc">{article.description}</Card.Subtitle>
+              <Card.Subtitle className="desc">
+                {article.description}
+              </Card.Subtitle>
               <Card.Text>{article.content}</Card.Text>
-              <a href={article.url} target="_blank" rel="noopener noreferrer">Go to url </a>
+              <a href={article.url} target="_blank" rel="noopener noreferrer">
+                Go to url{" "}
+              </a>
             </Card.Body>
           </Card>
         ))}
