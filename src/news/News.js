@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./News.css"
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 class News extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class News extends Component {
               <Card.Text className="author">{article.author}</Card.Text>
               <Card.Subtitle className="desc">{article.description}</Card.Subtitle>
               <Card.Text>{article.content}</Card.Text>
-              <a href={article.url}>Go to url </a>
+              <a href={article.url} target="_blank" rel="noopener noreferrer">Go to url </a>
             </Card.Body>
           </Card>
         ))}
